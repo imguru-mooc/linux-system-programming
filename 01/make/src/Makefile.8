@@ -1,0 +1,14 @@
+CC = gcc
+CFLAGS = -I../include -c
+LFLAGS = -lpthread
+TARGET = aaa
+OBJS = main.o
+
+$(TARGET) : $(OBJS) 
+	$(CC) $(OBJS) -o $(TARGET) $(LFLAGS) 
+
+%.o : %.c
+	$(CC) $(CFLAGS) $<
+
+clean :
+	rm -f $(OBJS) $(TARGET)

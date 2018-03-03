@@ -1,0 +1,13 @@
+CC = gcc
+CFLAGS = -c
+TARGET = aaa
+OBJS = main.o add.o
+
+$(TARGET) : $(OBJS) 
+	$(CC) $(OBJS) -o $(TARGET)
+
+main.o : main.c
+	$(CC) $(CFLAGS) $<
+
+add.o : add.c
+	$(CC) $(CFLAGS) $< 
