@@ -1,19 +1,28 @@
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 
-int main( int argc, char **argv)
+// # ./a.out xxx
+int main(int argc, char **argv)
 {
 	int fd;
 	int ret;
-	char buff[1024];
+	char buff[100];
 
-	fd = open( argv[1], O_RDONLY );
-	printf("fd=%d\n", fd );
-	while( ret = read( fd, buff, sizeof buff) ) 
+	if( argc == 2 )
+	{
+		fd = open(argv[1], O_RDONLY );
+		close(0);
+		dup(fd);
+	}
+
+	while(ret = read(0, buff, sizeof buff))
 		write( 1, buff, ret );
-	close(fd);
+
+	if( argc == 2 )
+	{
+		close(fd);
+		close(0);
+	}
 	return 0;
 }

@@ -1,14 +1,19 @@
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 
-int main( int argc, char **argv)
+// # ./a.out xxx
+int main(int argc, char **argv)
 {
-	FILE *fp;
+	int fd;
 	int ret;
-	char buff[1024];
+	char buff[100];
 
-	fp = fopen( argv[1], "r" );
-	while( ret = fread( buff, 1, sizeof buff, fp) ) 
-		fwrite( buff, 1, ret , stdout );
-	fclose(fp);
+	fd = open(argv[1], O_RDONLY);
+
+	while(ret = read(fd, buff, sizeof buff))
+		write( 1, buff, ret );
+
+	close(fd);
 	return 0;
 }

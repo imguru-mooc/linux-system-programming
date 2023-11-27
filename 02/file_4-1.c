@@ -2,15 +2,15 @@
 #include <unistd.h>
 int main(int argc, char **argv)
 {
+	char buff[1024];
 	FILE *fp;
-	int ch;
+
 	fp = fopen(argv[1], "r");
-	while((ch = fgetc(fp)) != EOF)
+	while(fgets(buff, sizeof buff, fp))
 	{
-		fputc(ch, stdout);
+		fputs(buff, stdout);
 		fflush(stdout);
 		usleep(100000);
 	}
-	fclose(fp);
 	return 0;
 }
