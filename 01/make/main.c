@@ -1,9 +1,13 @@
-#include <stdio.h>
-#include "main.h"
+#include <stdio.h>  // ctrl+wf , /usr/include
+#include "main.h"   // -I.
 
 int main()
 {
-	printf("%d\n", add(3,4));
+	int a=3;
+	int b=4;
+	int c = add(a, b);
+	printf("%d\n", c);
 	return 0;
 }
+
 

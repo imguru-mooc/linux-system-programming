@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -I../include -c
 LFLAGS = -lpthread
 TARGET = aaa
-OBJS = main.o
+OBJS = main.o add.o
 
 $(TARGET) : $(OBJS) 
 	$(CC) $(OBJS) -o $(TARGET) $(LFLAGS) 
