@@ -25,6 +25,7 @@ int daemon_init(void){
 int main(void)
 {
 	daemon_init();
+	//sleep(1000);
 	//printf("daemon\n");
 	syslog(1, "%s\n", "daemon");
 	while(1)

@@ -2,7 +2,7 @@
 #include <unistd.h>
 int main()
 {
-	fork();
+	fork(); 
 	printf("after\n");
 	return 0;
 }

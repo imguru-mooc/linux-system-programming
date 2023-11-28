@@ -82,7 +82,7 @@ int main( int argc, char **argv )
 	int ch;
 
 	while( (ch = getopt( argc, argv, "al")) != -1 )
-		printf("%c ",  ch );
+		printf("%c\n",  ch );
 	printf("\n");
 	return 0;
 }

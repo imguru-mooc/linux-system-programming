@@ -15,7 +15,7 @@ int main()
 			printf("\t\t\tchild\n");
 			sleep(1);
 		}
-		exit(7);
+		exit(0);
 	}
 	while(1)
 	{

@@ -13,7 +13,7 @@ int main()
 		printf("정상종료 : exit(%d)\n", (status>>8)&0xff );
 	else
 	{
-		printf("비정상종료 : signo(%d) %s\n", status&0xff,
+		printf("비정상종료 : signo(%d) %s\n", status&0x7f,
 				(status&0x80)?"(core dumped)":"" );
 	}
 	return 0;

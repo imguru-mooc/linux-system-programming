@@ -3,7 +3,8 @@
 int main()
 {
 	char *argv[] = { "ls", (char*)0 };
-	execve( "/bin/ls", argv, 0 );
-	printf("after\n");
+	execve( "/usr/bin/ls", argv, 0 );
+	//printf("after\n");
+	printf("prompt>");
 	return 0;
 }

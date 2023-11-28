@@ -6,7 +6,7 @@ int sum = 0;
 void *thread_routine( void * arg )
 {
 	int local,i;
-	for(i=0; i<10000000/MAX_THREAD; i++ )
+	for(i=0; i<100000000/MAX_THREAD; i++ )
 	{
 		local = sum;
 		local = local+1;

@@ -15,8 +15,8 @@ void my_ls( char *d_name )
 	chdir("..");
 }
 
-int main()
+int main(int argc, char **argv)
 {
-	my_ls(".");
+	my_ls(argv[1]);
 	return 0;
 }
