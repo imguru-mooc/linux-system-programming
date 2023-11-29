@@ -1,7 +1,7 @@
 #include <pthread.h>
 #include <stdio.h>
 
-#define  MAX_THREAD   2
+#define  MAX_THREAD   4
 int sum = 0;
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 void *thread_routine( void * arg )

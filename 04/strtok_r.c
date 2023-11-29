@@ -13,7 +13,7 @@ void *my_handler1(void *data)
 	{
 		printf("[%s]\n", p );
 		sleep(1);
-		p = strtok_r( 0, "-", &saveptr);
+		p = strtok_r( saveptr, "-", &saveptr);
 	}
 }
 void *my_handler2(void *data)
@@ -26,7 +26,7 @@ void *my_handler2(void *data)
 	{
 		printf("[%s]\n", p );
 		sleep(1);
-		p = strtok_r( 0, ".", &saveptr);
+		p = strtok_r( saveptr, ".", &saveptr);
 	}
 }
 int main()
@@ -53,7 +53,7 @@ void *my_handler(void *data)
 	while(p)
 	{
 		printf("[%s]\n", p );
-		p = strtok_r( 0, "-", &saveptr);
+		p = strtok_r( saveptr, "-", &saveptr);
 	}
 }
 int main()
@@ -77,7 +77,7 @@ int main()
 	while(p)
 	{
 		printf("[%s]\n", p );
-		p = strtok_r( 0, "-", &saveptr);
+		p = strtok_r( saveptr, "-", &saveptr);
 	}
 	return 0;
 }

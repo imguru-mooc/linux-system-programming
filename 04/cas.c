@@ -11,7 +11,7 @@ int __bionic_cmpxchg(int32_t old_value, int32_t new_value,
 	return prev != old_value;
 }
 
-int mutex=0;
+int mutex=1;
 
 void spin_lock(int *mutex)
 {
@@ -19,10 +19,17 @@ void spin_lock(int *mutex)
 }
 int main()
 {
+	int ret = __bionic_cmpxchg( 0, 1, &mutex);
+	printf("ret=%d, mutex=%d\n", ret, mutex); 
+
+	//int ret = __bionic_cmpxchg( 0, 1, &mutex);
+	//printf("ret=%d, mutex=%d\n", ret, mutex); 
+	/*
 	int ret;
 	spin_lock(&mutex);
 	printf("임계 영역 진입 1.\n");
 	spin_lock(&mutex);
 	printf("임계 영역 진입 2.\n");
+	*/
 	return 0;
 }
