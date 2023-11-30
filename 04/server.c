@@ -13,6 +13,7 @@ int main()
 	char buff[1024];
 	fd = open("myfifo", O_RDWR );
 	while( ret=readline( fd, buff, sizeof buff) )
+	//while( ret=read( fd, buff, sizeof buff) )
 		write(1, buff, ret );
 
 	return 0;

@@ -12,8 +12,8 @@ int main()
 	int local=10;
 	pthread_t thread;
 	pthread_create(&thread, 0, foo, &local);
-	//foo(&local);
 	pthread_join( thread, 0 );
+	//foo(&local);
 	printf("parent: local=%d\n", local);
 	return 0;
 }

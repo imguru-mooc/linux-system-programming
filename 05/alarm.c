@@ -1,4 +1,4 @@
-#if 1
+#if 0
 #include <unistd.h>
 #include <stdio.h>
 #include <signal.h>
@@ -20,6 +20,7 @@ int main()
 	return 0;
 }
 #endif
+
 #if 0
 #include <unistd.h>
 #include <stdio.h>

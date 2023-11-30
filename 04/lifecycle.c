@@ -15,7 +15,7 @@ int main( int argc, char **argv ){
 	void *thread_result;
 	int status;
 
-	DPRINTF( ("hello\n") );  
+	DPRINTF( "hello\n" );  
 	status = pthread_create( &thread_id,0,thread_routine,0);
 	if( status != 0 )
 		err_abort( status, "Create thread");
@@ -25,7 +25,7 @@ int main( int argc, char **argv ){
 	if( status != 0 )
 		err_abort( status, "Join thread");
 	if( thread_result == 0 )
-		DPRINTF(("자식 쓰레드 종료\n"));
+		DPRINTF("자식 쓰레드 종료\n");
 		*/
 
 	pthread_exit(0);

@@ -3,11 +3,12 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <string.h>
 #ifdef DEBUG
-# define DPRINTF(arg) printf arg
+# define DPRINTF(fmt,...) printf(fmt, __VA_ARGS__)
 #else
-# define DPRINTF(arg)
+# define DPRINTF(fmt,...)
 #endif
 #define err_abort(code,text) do {       \
 	fprintf(stderr, "%s at \"%s\":%d: %s\n",  \
