@@ -20,11 +20,13 @@ int main()
 	{
 		close(fd[0]);
 		write(fd[1], msgout, MSGSIZE);
+		close(fd[1]);
 	}    
 	else if (pid == 0) 
 	{
 		close(fd[1]);
 		read(fd[0],msgin,MSGSIZE);
+		close(fd[0]);
 		puts(msgin);
 	}
 	else

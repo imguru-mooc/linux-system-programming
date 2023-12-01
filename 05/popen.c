@@ -8,7 +8,7 @@ int main(void)
 	pipein_fp = popen("ls", "r"); 
 
 	/*popen() 호출을 사용하여 단방향 파이프를 만든다*/ 
-	pipeout_fp = popen("sort", "w"); 
+	pipeout_fp = popen("wc", "w"); 
 
 	/*반복 처리*/
 	while(fgets(readbuf, 80, pipein_fp)) 
